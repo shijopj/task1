@@ -8,28 +8,32 @@ abstract class User {
 class BankAccount implements IfaceBankAccount
 {
 
-    private $balance = null;
+    public $balance = null;
 
     public function __construct(Money $openingBalance)
     {
         $this->balance = $openingBalance;
     }
 
-    public function balance()
-    {
- 
+    public function balance(){
+        return  $this->balance;
     }
 
     public function deposit(Money $amount)
     {
-        //implement this method
+        $amt=$amount->amount;
+        $amt=(int) $amt;
+        $bal=$this->balance;
+        $bal=(int) $bal->amount;
+        $this->balance=$bal+$amt;
     }
 
     public function transfer(Money $amount, BankAccount $account)
     {
-        //implement this method
+       
     }
     public function withdraw(Money $amount)
     {
+        
     }
 }

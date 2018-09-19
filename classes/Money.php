@@ -2,7 +2,7 @@
 
 class Money
 {
-    private $amount = 0;
+    public $amount = 0;
 
     public function __construct($amount)
     {
