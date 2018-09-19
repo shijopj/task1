@@ -1,5 +1,10 @@
 <?php
 
+abstract class User {
+     public $data=array();
+
+     abstract public function balance();
+}
 class BankAccount implements IfaceBankAccount
 {
 
@@ -12,7 +17,7 @@ class BankAccount implements IfaceBankAccount
 
     public function balance()
     {
-        return $this->balance;
+ 
     }
 
     public function deposit(Money $amount)
@@ -23,5 +28,8 @@ class BankAccount implements IfaceBankAccount
     public function transfer(Money $amount, BankAccount $account)
     {
         //implement this method
+    }
+    public function withdraw(Money $amount)
+    {
     }
 }
